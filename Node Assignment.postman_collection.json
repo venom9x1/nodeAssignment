@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "8e313c8b-4a3f-46dc-9f23-4813aea77d75",
+		"name": "Node Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sign In",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"admin@nodeassignment.com\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/signin",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"admin@nodeassignment.com\",\n     \"username\": \"admin\",\n      \"password\": \"password\",\n       \"roles\" : \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Product via Moderator Auth",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMTAxMjY3ZWYxMmM1MTI5Y2Q2OTc4NyIsImlhdCI6MTYyODQ0NDExMSwiZXhwIjoxNjI4NTMwNTExfQ.fcxIdx_zUWE6M0GEYOeH3PgxUBHoAiqkJAZjTp7qzRk",
+						"type": "text"
+					},
+					{
+						"key": "Access-Control-Request-Headers",
+						"value": "*",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Pen Drive\",\n\t\"category\": \"Accessories\",\n\t\"price\": 40000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/products",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/products",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product via ID and Moderator Auth only",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMTAxMjY3ZWYxMmM1MTI5Y2Q2OTc4NyIsImlhdCI6MTYyODQ0NDExMSwiZXhwIjoxNjI4NTMwNTExfQ.fcxIdx_zUWE6M0GEYOeH3PgxUBHoAiqkJAZjTp7qzRk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n      \"name\": \"Hard Drive\",\n        \"category\": \"Accessories\",\n        \"price\": 50000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/products/61101468acc34a13ea0c6dd4",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"61101468acc34a13ea0c6dd4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product via Id And Admin Auth",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMTAwZDJhZWYxMmM1MTI5Y2Q2OTc4NSIsImlhdCI6MTYyODQ0NDQ2MCwiZXhwIjoxNjI4NTMwODYwfQ.9GvyKQRqO261X2o1fULi_ThaOYxLEIHW1LgupayJH0o",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/products/61101468acc34a13ea0c6dd4",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"61101468acc34a13ea0c6dd4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
